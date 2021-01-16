@@ -1,0 +1,24 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"A File Icon",
+		"AceJump",
+		"ayu",
+		"BracketHighlighter",
+		"Color Highlight",
+		"Emmet",
+		"Git",
+		"JsPrettier",
+		"Naomi",
+		"NeoVintageous",
+		"Origami",
+		"Package Control",
+		"SideBarEnhancements",
+		"SublimeLinter-eslint",
+		"Tabnine"
+	]
+}

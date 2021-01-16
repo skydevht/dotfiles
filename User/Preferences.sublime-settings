@@ -1,0 +1,105 @@
+{
+	"auto_complete": true,
+	"auto_complete_triggers":
+	[
+		{
+			"characters": ".(){}[],'\"=<>/\\+-|&*%=$#@! ",
+			"selector": "source.python"
+		},
+		{
+			"characters": ":.(){}[],'\"=<>/\\+-|&*%=$#@! ",
+			"selector": "source & - source.python - constant.numeric"
+		},
+		{
+			"characters": " qazwsxedcrfvtgbyhnujmikolpQAZWSXEDCRFVTGBYHNUJMIKOLP",
+			"selector": "text"
+		}
+	],
+	"color_scheme": "Packages/ayu/ayu-light.sublime-color-scheme",
+	"extra_file_exclude_patterns":
+	[
+		"*.pyc",
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db",
+		"*.sublime-workspace"
+	],
+	"extra_folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"node_modules"
+	],
+	"file_exclude_patterns":
+	[
+		"*.pyc",
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db",
+		"*.sublime-workspace",
+		"/Users/hash/Projects/Smilemail/app/ios/smilemail/.DS_Store",
+		"/Users/hash/Projects/Smilemail/app/src/.DS_Store",
+		"/Users/hash/Projects/Smilemail/app/ios/smilemail/Images.xcassets/.DS_Store",
+		"/Users/hash/Projects/Smilemail/app/.DS_Store",
+		"/Users/hash/Projects/Smilemail/app/ios/.DS_Store",
+		"/Users/hash/Projects/Smilemail/app/src/assets/icons/.DS_Store",
+		"/Users/hash/Projects/Smilemail/app/ios/smilemail/GoogleService-Info.plist",
+		"/Users/hash/Projects/Smilemail/app/src/assets/.DS_Store"
+	],
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"node_modules",
+		"/Users/hash/Projects/Proelio/admin/node_modules",
+		"/Users/hash/Projects/Smilemail/app/ios/Pods",
+		"/Users/hash/Projects/Smilemail/app/node_modules",
+		"/Users/hash/Projects/Smilemail/app/ios/smilemail.xcworkspace/xcuserdata"
+	],
+	"font_face": "FuraCode Nerd Font Light",
+	"font_size": 16,
+	"ignored_packages":
+	[
+		"Six",
+		"Vintage",
+		"Vintageous"
+	],
+	"neovintageous_build_version": 11100,
+	"theme": "ayu-light.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"vintageous_enable_sneak": true
+}

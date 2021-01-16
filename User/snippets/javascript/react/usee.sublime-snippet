@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+useEffect(() => {
+	$0
+}, [$1]);
+]]></content>
+  <tabTrigger>usee</tabTrigger>
+  <description>useEffect</description>
+  <scope>source.js</scope>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+const ${1:callback} = useCallback(() => {
+	$0
+}, [$2]);
+]]></content>
+  <tabTrigger>usec</tabTrigger>
+  <description>useCallback</description>
+  <scope>source.js</scope>
+</snippet>

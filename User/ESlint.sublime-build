@@ -1,0 +1,13 @@
+{
+	"shell_cmd": ". ~/.nvm/nvm.sh && yarn lint -f compact \"$file\"",
+	"selector": "source.js",
+	"working_dir": "$folder",
+	"file_regex": "(.*): line (\\d+), col (\\d+), (.+)",
+	"variants": [
+	    {
+	        "name": "Fix",
+			"shell_cmd": ". ~/.nvm/nvm.sh && yarn lint \"$file\" --fix",
+			"file_regex": null,
+	    }
+	]
+}

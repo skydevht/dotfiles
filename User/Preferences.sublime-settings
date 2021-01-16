@@ -15,7 +15,7 @@
 			"selector": "text"
 		}
 	],
-	"color_scheme": "Packages/ayu/ayu-light.sublime-color-scheme",
+	"color_scheme": "Packages/ayu/ayu-mirage.sublime-color-scheme",
 	"extra_file_exclude_patterns":
 	[
 		"*.pyc",
@@ -99,7 +99,7 @@
 		"Vintageous"
 	],
 	"neovintageous_build_version": 11100,
-	"theme": "ayu-light.sublime-theme",
+	"theme": "ayu-mirage.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"vintageous_enable_sneak": true
 }

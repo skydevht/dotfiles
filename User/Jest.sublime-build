@@ -1,0 +1,4 @@
+{
+    "shell_cmd": ". ~/.nvm/nvm.sh && yarn test \"$file\"",
+    "file_patterns": ["*.test.js"]
+}

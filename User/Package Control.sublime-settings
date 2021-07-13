@@ -7,18 +7,25 @@
 	[
 		"A File Icon",
 		"AceJump",
+		"Agila Theme",
 		"ayu",
 		"BracketHighlighter",
 		"Color Highlight",
+		"Dockerfile Syntax Highlighting",
 		"Emmet",
+		"Flow",
 		"Git",
+		"INI",
 		"JsPrettier",
 		"Naomi",
 		"NeoVintageous",
+		"nginx",
 		"Origami",
 		"Package Control",
 		"SideBarEnhancements",
+		"SublimeLinter",
 		"SublimeLinter-eslint",
-		"Tabnine"
-	]
+		"Svelte",
+		"TypeScript",
+	],
 }

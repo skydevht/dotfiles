@@ -86,7 +86,6 @@ set tabstop=2                                                               " co
 " Wrapping {{{2
 set nowrap
 " Colors {{{2
-set termguicolors
 " StatusLine {{{2
 set statusline=%t                                       " tail of the filename
 set statusline+=\ %h                                    " help file flag

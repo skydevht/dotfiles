@@ -13,7 +13,7 @@ ZSH_THEME="robbyrussell"
 export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
 
-plugins=(zsh-nvm git yarn z)
+plugins=(zsh-nvm git yarn z ag pod)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -39,10 +39,15 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$HOME/flutter/bin
+export PATH=$PATH:$HOME/Projects/flutter/bin
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 alias config='/usr/bin/git --git-dir=/Users/hash/.cfg/ --work-tree=/Users/hash'
 # eval "$(rbenv init -)" disabling rbenv for now
 
 # Brew
 export HOMEBREW_NO_AUTO_UPDATE=1
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export GOPATH=$HOME/projects/gocode
+export PATH="$PATH":"$GOPATH/bin"

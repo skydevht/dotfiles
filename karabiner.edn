@@ -1,90 +1,28 @@
 {:profiles {:goku {:default true}},
- :devices {:ducky [{:vendor_id 1046, :product_id 291}]},
+ :devices {:ducky [{:vendor_id 1046, :product_id 291}],
+           :elecom [{:vendor_id 1390, :product_id 305}]},
+ :simlayers {:w-mode {:key :w}},
  :templates {:alfred "osascript -e 'tell application \"Alfred 4\" to run trigger \"%s\" in workflow \"%s\" with argument \"%s\"'",
              :km "osascript -e 'tell application \"Keyboard Maestro Engine\" to do script \"%s\"'",
              :swinsian "osascript -e 'tell application \"Swinsian\" to %s'",
              :open "open \"%s\""},
- :main [{:des "normal",
-         :rules [[:##tab
-                  :left_control
-                  [["snap-mode" 0] ["pop-mode" 0]]]
-                 [:##comma
-                  :delete_or_backspace
-                  [["snap-mode" 0] ["pop-mode" 0]]]
-                 [:##period
-                  :right_control
-                  [["snap-mode" 0] ["pop-mode" 0]]]
-                 [:##slash
-                  :right_option
-                  [["snap-mode" 0] ["pop-mode" 0]]]
-                 [:##close_bracket
-                  :left_control
-                  [["snap-mode" 0] ["pop-mode" 0]]]]}
-        {:des "snap mode",
-         :rules [[:##caps_lock
-                  ["snap-mode" 1]
-                  [["snap-mode" 0] ["pop-mode" 0]]
-                  {:afterup ["snap-mode" 0]}]
-                 [:##quote
-                  ["snap-mode" 1]
-                  [["snap-mode" 0] ["pop-mode" 0]]
-                  {:afterup ["snap-mode" 0]}]
-                 [:tab :!Shyphen ["snap-mode" 1]]
-                 [:##q :1 ["snap-mode" 1]]
-                 [:##w :2 ["snap-mode" 1]]
-                 [:##e :3 ["snap-mode" 1]]
-                 [:##r :4 ["snap-mode" 1]]
-                 [:##t :5 ["snap-mode" 1]]
-                 [:##y :6 ["snap-mode" 1]]
-                 [:##u :7 ["snap-mode" 1]]
-                 [:##i :8 ["snap-mode" 1]]
-                 [:##o :9 ["snap-mode" 1]]
-                 [:##p :0 ["snap-mode" 1]]
-                 [:##open_bracket :!Sbackslash ["snap-mode" 1]]
-                 [:##close_bracket
-                  :grave_accent_and_tilde
-                  ["snap-mode" 1]]
-                 [:##caps_lock :!Ssemicolon ["snap-mode" 1]]
-                 [:##a :!Sgrave_accent_and_tilde ["snap-mode" 1]]
-                 [:##s :equal_sign ["snap-mode" 1]]
-                 [:##d :quote ["snap-mode" 1]]
-                 [:##f :!Squote ["snap-mode" 1]]
-                 [:##e :hyphen ["snap-mode" 1]]
-                 [:##h :!Sequal_sign ["snap-mode" 1]]
-                 [:##j :comma ["snap-mode" 1]]
-                 [:##k :period ["snap-mode" 1]]
-                 [:##l :escape ["snap-mode" 1]]
-                 [:##semicolon :!Sslash ["snap-mode" 1]]
-                 [:##quote :semicolon ["snap-mode" 1]]
-                 [:##left_shift :tab ["snap-mode" 1]]
-                 [:##z :!Scomma ["snap-mode" 1]]
-                 [:##x :!Sopen_bracket ["snap-mode" 1]]
-                 [:##c :open_bracket ["snap-mode" 1]]
-                 [:##v :!S9 ["snap-mode" 1]]
-                 [:##b :slash ["snap-mode" 1]]
-                 [:##n :backslash ["snap-mode" 1]]
-                 [:##m :!S0 ["snap-mode" 1]]
-                 [:##comma :close_bracket ["snap-mode" 1]]
-                 [:##period :!Sclose_bracket ["snap-mode" 1]]
-                 [:##slash :!Speriod ["snap-mode" 1]]]}
-        {:des "pop mode",
-         :rules [[:##open_bracket
-                  ["pop-mode" 1]
-                  [["snap-mode" 0] ["pop-mode" 0]]
-                  {:afterup ["pop-mode" 0]}]
-                 [:5
-                  ["pop-mode" 1]
-                  [["snap-mode" 0] ["pop-mode" 0]]
-                  {:afterup ["pop-mode" 0]}]
-                 [:##q :!S1 ["pop-mode" 1]]
-                 [:##w :!S2 ["pop-mode" 1]]
-                 [:##e :!S3 ["pop-mode" 1]]
-                 [:##r :!S4 ["pop-mode" 1]]
-                 [:##t :!S5 ["pop-mode" 1]]
-                 [:##y :!S6 ["pop-mode" 1]]
-                 [:##u :!S7 ["pop-mode" 1]]
-                 [:##i :!S8 ["pop-mode" 1]]
-                 [:##h :left_arrow ["pop-mode" 1]]
-                 [:##j :down_arrow ["pop-mode" 1]]
-                 [:##k :up_arrow ["pop-mode" 1]]
-                 [:##l :right_arrow ["pop-mode" 1]]]}]}
+ :main [{:des "ducky cmd alt",
+         :rules [[:##left_command :##left_option [:ducky]]
+                 [:##right_command :##right_option [:ducky]]
+                 [:##right_option :##right_command [:ducky]]
+                 [:##left_option
+                  :##left_command
+                  [:ducky]
+                  {:alone :!Ctab}]]}
+        {:des "w mode",
+         :rules [:w-mode
+                 [:b [:km "open: Safari"]]
+                 [:f [:km "open: Firefox Dev"]]
+                 [:s [:km "open: Simulator"]]
+                 [:m [:km "open: Swinsian"]]
+                 [:t [:km "open: Iterm"]]
+                 [:g [:km "open: Sublime Merge"]]
+                 [:e [:km "open: Sublime Text"]]]}
+        {:des "elecom",
+         :rules [[:button7 :button3 [:elecom]]
+                 [:button6 :button1 [:elecom]]]}]}

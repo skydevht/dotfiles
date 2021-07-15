@@ -51,3 +51,4 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 export GOPATH=$HOME/projects/gocode
 export PATH="$PATH":"$GOPATH/bin"
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"

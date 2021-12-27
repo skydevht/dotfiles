@@ -13,7 +13,6 @@ Plug 'stevearc/vim-arduino'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-vinegar'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'rizzatti/dash.vim'
 "  Interface
 Plug 'unblevable/quick-scope'
@@ -168,7 +167,7 @@ noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 map <leader>pp :setlocal paste!<cr>
 
 " Git {{{2
-nmap <leader>gs :Gstatus<CR>
+nmap <leader>gs :Git<CR>
 nmap <leader>ga :Git add -A<CR>
 nmap <leader>gb :Gblame<CR>
 nmap <leader>gc :Gcommit<CR>
@@ -198,10 +197,10 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 " SnipMate {{{2
 let g:snipMate = {}
 let g:snipMate['snippet_version'] = 1
-" Neoformat
+" Neoformat {{{2
 let g:neoformat_try_formatprg = 1
 let g:neoformat_enabled_javascript = []
-map <F3> :Neoformat<cr>
+map <leader>d :Neoformat<cr>
 " Emmet {{{2
 let g:user_emmet_settings = {
             \ 'javascript.jsx' : {

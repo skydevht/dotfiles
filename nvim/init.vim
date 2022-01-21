@@ -6,7 +6,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'ledger/vim-ledger'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Integration
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
@@ -30,7 +29,6 @@ Plug 'garbas/vim-snipmate'
 Plug 'sbdchd/neoformat'
 " Code Display
 Plug 'chriskempson/base16-vim'
-Plug 'arcticicestudio/nord-vim'
 Plug 'morhetz/gruvbox'
 Plug 'ap/vim-css-color'
 
@@ -209,33 +207,6 @@ let g:user_emmet_settings = {
             \ },
             \ }
 imap <leader><leader> <C-y>,
-" Tree Sitter {{{2
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  -- One of "all", "maintained" (parsers with maintainers), or a list of languages
-  ensure_installed = "maintained",
-
-  -- Install languages synchronously (only applied to `ensure_installed`)
-  sync_install = false,
-
-  -- List of parsers to ignore installing
-  ignore_install = { "javascript" },
-
-  highlight = {
-    -- `false` will disable the whole extension
-    enable = true,
-
-    -- list of language that will be disabled
-    disable = { "c", "rust" },
-
-    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-    -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = false,
-  },
-}
-EOF
 
 " Colors {{{1
 " Custom highlight {{{2

@@ -9,11 +9,11 @@ Plug 'ledger/vim-ledger'
 " Integration
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
-Plug 'stevearc/vim-arduino'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-vinegar'
 Plug 'rizzatti/dash.vim'
+Plug 'vlime/vlime', {'rtp': 'vim/'}
 "  Interface
 Plug 'unblevable/quick-scope'
 " Commands
@@ -27,10 +27,9 @@ Plug 'tomtom/tlib_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'garbas/vim-snipmate'
 Plug 'sbdchd/neoformat'
+Plug 'bhurlow/vim-parinfer'
 " Code Display
-Plug 'chriskempson/base16-vim'
 Plug 'morhetz/gruvbox'
-Plug 'ap/vim-css-color'
 
 call plug#end()
 
@@ -191,6 +190,8 @@ nnoremap <F12> :syntax sync fromstart<cr>
 
 
 " Plugin Configuration {{{1
+" Polyglot {{{ 2
+let g:tex_flavor = "latex"
 " FZF {{{2
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 " SnipMate {{{2
@@ -207,7 +208,8 @@ let g:user_emmet_settings = {
             \ },
             \ }
 imap <leader><leader> <C-y>,
-
+" Parinfer {{{2
+let g:vim_parinfer_filetypes = ['lisp', 'clojure']
 " Colors {{{1
 " Custom highlight {{{2
 hi jsClassDefinition gui=bold
@@ -273,4 +275,9 @@ let g:gutentags_ctags_exclude = [
       \ '*.rar', '*.zip', '*.tar', '*.tar.gz', '*.tar.xz', '*.tar.bz2',
       \ '*.pdf', '*.doc', '*.docx', '*.ppt', '*.pptx',
       \ ]
+
+" Syntax Specific {{{2
+" Latex {{{3
+
 " vim:fdm=marker:fdl=1
+

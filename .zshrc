@@ -1,10 +1,6 @@
 # If you come from bash you might have to change your $PATH.
     # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-if type brew &>/dev/null; then
-    FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-fi
-
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/hash/.oh-my-zsh"
         
@@ -13,7 +9,7 @@ ZSH_THEME="robbyrussell"
 export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
 
-plugins=(zsh-nvm git yarn z ag pod)
+plugins=(zsh-nvm git yarn z ag pod laravel5)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -44,11 +40,16 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 alias config='/usr/bin/git --git-dir=/Users/hash/.cfg/ --work-tree=/Users/hash'
 # eval "$(rbenv init -)" disabling rbenv for now
 
-# Brew
-export HOMEBREW_NO_AUTO_UPDATE=1
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 export GOPATH=$HOME/projects/gocode
 export PATH="$PATH":"$GOPATH/bin"
-export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+export PATH="$PATH":"$HOME/Library/Python/3.10/bin"
+
+alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+
+[ -f "/Users/hash/.ghcup/env" ] && source "/Users/hash/.ghcup/env" # ghcup-env
+
+# opam configuration
+[[ ! -r /Users/hash/.opam/opam-init/init.zsh ]] || source /Users/hash/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null

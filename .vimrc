@@ -2,7 +2,6 @@ call plug#begin('~/.vim/plugged')
 " Language
 Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
-Plug 'tpope/vim-surround'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
 " Integration
 Plug 'tpope/vim-dispatch'
@@ -10,9 +9,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-vinegar'
+Plug 'vlime/vlime', {'rtp': 'vim/'}
+Plug 'tpope/vim-fireplace'
 "  Interface
 Plug 'unblevable/quick-scope'
 " Commands
+Plug 'tpope/vim-surround'
 Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
@@ -23,19 +25,13 @@ Plug 'tomtom/tlib_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'garbas/vim-snipmate'
 Plug 'sbdchd/neoformat'
+Plug 'bhurlow/vim-parinfer'
 " Code Display
-Plug 'arcticicestudio/nord-vim'
 Plug 'morhetz/gruvbox'
-
 call plug#end()
 
 
 syntax on
-if !exists('g:path_modified')
-  let $PATH .= ':/Users/hash/.nvm/versions/node/v12.22.1/bin:/Users/hash/Projects/flutter/bin'
-endif
-
-let g:path_modified = 1
 
 " Generic config {{{1
 " General {{{2
@@ -180,7 +176,18 @@ let g:neoformat_enabled_dart = ['flutter']
 " Snipmate {{{2
 let g:snipMate = { 'snippet_version': 0 }
 
+" Parinfer {{{2
+let g:vim_parinfer_filetypes = ['lisp', 'clojure']
+
+" Colors {{{1
 colorscheme gruvbox
+
+" MacVIM {{{1
+if has("gui_macvim")
+  set guioptions=egm
+endif
+
+
 
 
 " vim:fdm=marker:fdl=1

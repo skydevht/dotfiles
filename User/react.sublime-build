@@ -1,5 +1,0 @@
-{
-	"shell_cmd": ". ~/.nvm/nvm.sh && yarn start",
-	"keyfiles": ["package.json"],
-	"working_dir": "$folder"
-}

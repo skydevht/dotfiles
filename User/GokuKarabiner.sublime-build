@@ -1,4 +1,0 @@
-{
-	"shell_cmd": "goku",
-	"file_patterns": ["karabiner.edn"]
-}

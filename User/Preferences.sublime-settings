@@ -2,7 +2,7 @@
 // and are overridden in turn by syntax-specific settings.
 {
 	"font_size": 15,
-	"font_face": "IBM Plex Mono",
+	"font_face": "Input",
 	"translate_tabs_to_spaces": true,
 	"wrod_wrap": true,
 	"wrap_width": 72,
@@ -10,6 +10,9 @@
 	"scroll_context_lines": 3,
 	"ignored_packages":
 	[
+		"0x0",
+		"Pug",
+		"Rust Enhanced",
 		"Six",
 		"Vintage",
 		"Vintageous",

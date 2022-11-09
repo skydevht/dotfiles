@@ -12,24 +12,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-vinegar'
-Plug 'rizzatti/dash.vim'
-Plug 'vlime/vlime', {'rtp': 'vim/'}
-"  Interface
-Plug 'unblevable/quick-scope'
 " Commands
-Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
-Plug 'wellle/targets.vim'
-Plug 'arithran/vim-delete-hidden-buffers'
-Plug 'igemnace/vim-makery'
-Plug 'tomtom/tlib_vim'
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'garbas/vim-snipmate'
 Plug 'sbdchd/neoformat'
-Plug 'bhurlow/vim-parinfer'
 " Code Display
-Plug 'morhetz/gruvbox'
+Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
@@ -44,7 +32,6 @@ set colorcolumn=81                                                          " Se
 set cursorline                                                              " Highlight the current line
 set number
 set hidden                                                                  " Any buffer can be hidden
-set linespace=0                                                             " No extra spaces between rows
 " Writing {{{2
 set lazyredraw                                                              " Render window only after the end of a macro
 set nojoinspaces                                                            " Prevents inserting two spaces after punctuation on a join (J)
@@ -180,104 +167,46 @@ nmap <leader>ge :Gedit<CR>
 " Function keys {{{2
 noremap <F5> :source $MYVIMRC<CR>
 nnoremap <F10> :e $MYVIMRC<CR>
+nnoremap <F12> :syntax sync fromstart<cr>
 
 " FZF {{{2
 nmap <leader>fb :Buffers<cr>
 nmap <leader>ff :Files<cr>
-nnoremap <leader>fg :Ag<space>
+nnoremap <leader>fg :Rg<space>
 
-nnoremap <F12> :syntax sync fromstart<cr>
+" Neoformat {{{2
+map <leader>d :Neoformat<cr>
 
+" Emmet {{{2
+imap <leader><leader> <C-y>,
 
 " Plugin Configuration {{{1
 " Polyglot {{{ 2
 let g:tex_flavor = "latex"
+let g:vim_markdown_frontmatter=1
 " FZF {{{2
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
-" SnipMate {{{2
-let g:snipMate = {}
-let g:snipMate['snippet_version'] = 1
+let $FZF_DEFAULT_COMMAND = 'rg --files'
 " Neoformat {{{2
 let g:neoformat_try_formatprg = 1
 let g:neoformat_enabled_javascript = []
-map <leader>d :Neoformat<cr>
 " Emmet {{{2
 let g:user_emmet_settings = {
             \ 'javascript.jsx' : {
             \     'extends' : 'jsx',
             \ },
             \ }
-imap <leader><leader> <C-y>,
 " Parinfer {{{2
 let g:vim_parinfer_filetypes = ['lisp', 'clojure']
 " Colors {{{1
 " Custom highlight {{{2
 hi jsClassDefinition gui=bold
 hi jsFuncArgs gui=italic
-" Syntax options {{{2
-let g:javascript_plugin_flow = 1
-" Quick Scope {{{2
-augroup qs_colors
-  autocmd!
-  autocmd ColorScheme * highlight QuickScopePrimary guifg='#00c200' gui=underline ctermfg=155 cterm=underline
-  autocmd ColorScheme * highlight QuickScopeSecondary guifg='#00c5c7' gui=underline ctermfg=81 cterm=underline
-augroup END
 " Colorscheme {{{2
-colorscheme gruvbox
-
-
-let g:gutentags_ctags_exclude = [
-      \ '*.git', '*.svg', '*.hg',
-      \ '*/tests/*',
-      \ 'build',
-      \ 'dist',
-      \ '*sites/*/files/*',
-      \ 'bin',
-      \ 'node_modules',
-      \ 'bower_components',
-      \ 'bower_components',
-      \ 'cache',
-      \ 'Pods',
-      \ 'compiled',
-      \ 'docs',
-      \ 'example',
-      \ 'bundle',
-      \ 'vendor',
-      \ '*.md',
-      \ '*-lock.json',
-      \ '*.lock',
-      \ '*bundle*.js',
-      \ '*build*.js',
-      \ '.*rc*',
-      \ '*.json',
-      \ '*.min.*',
-      \ '*.map',
-      \ '*.bak',
-      \ '*.zip',
-      \ '*.pyc',
-      \ '*.class',
-      \ '*.sln',
-      \ '*.Master',
-      \ '*.csproj',
-      \ '*.tmp',
-      \ '*.csproj.user',
-      \ '*.cache',
-      \ '*.pdb',
-      \ 'tags*',
-      \ 'cscope.*',
-      \ '*.css',
-      \ '*.less',
-      \ '*.scss',
-      \ '*.exe', '*.dll',
-      \ '*.mp3', '*.ogg', '*.flac',
-      \ '*.swp', '*.swo',
-      \ '*.bmp', '*.gif', '*.ico', '*.jpg', '*.png',
-      \ '*.rar', '*.zip', '*.tar', '*.tar.gz', '*.tar.xz', '*.tar.bz2',
-      \ '*.pdf', '*.doc', '*.docx', '*.ppt', '*.pptx',
-      \ ]
-
-" Syntax Specific {{{2
-" Latex {{{3
+if exists('$BASE16_THEME')
+      \ && (!exists('g:colors_name') || g:colors_name != 'base16-$BASE16_THEME')
+    let base16colorspace=256
+    colorscheme base16-$BASE16_THEME
+endif
 
 " vim:fdm=marker:fdl=1
 

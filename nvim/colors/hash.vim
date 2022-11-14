@@ -12,24 +12,24 @@ let g:colors_name = "hash"
 hi Normal term=NONE cterm=NONE ctermfg=0 ctermbg=NONE
 
 " Faded
-hi ColorColumn term=NONE cterm=NONE ctermfg=NONE ctermbg=236
+hi ColorColumn term=NONE cterm=NONE ctermfg=NONE ctermbg=254
 hi Comment term=NONE cterm=NONE ctermfg=2 ctermbg=NONE
 hi SpecialComment term=NONE cterm=NONE ctermfg=2 ctermbg=NONE
 hi FoldColumn term=NONE cterm=NONE ctermfg=240 ctermbg=NONE
 hi Folded term=NONE cterm=NONE ctermfg=240 ctermbg=NONE
-hi LineNr term=NONE cterm=NONE ctermfg=14 ctermbg=15
+hi LineNr term=NONE cterm=NONE ctermfg=245 ctermbg=254
 hi NonText term=NONE cterm=NONE ctermfg=240 ctermbg=NONE
 hi SignColumn term=NONE cterm=NONE ctermfg=240 ctermbg=NONE
 hi SpecialKey term=NONE cterm=NONE ctermfg=240 ctermbg=NONE
-hi StatusLineNC term=NONE cterm=NONE ctermfg=14 ctermbg=0
-hi VertSplit term=NONE cterm=NONE ctermfg=15 ctermbg=7
+hi StatusLineNC term=NONE cterm=NONE ctermfg=0 ctermbg=254
+hi VertSplit term=NONE cterm=NONE ctermfg=0 ctermbg=7
 
 " Highlighted
-hi CursorColumn term=NONE cterm=NONE ctermfg=NONE ctermbg=0
+hi CursorColumn term=NONE cterm=NONE ctermfg=NONE ctermbg=8
 hi CursorIM term=NONE cterm=NONE ctermfg=0 ctermbg=4
 hi CursorLineNr term=NONE cterm=NONE ctermfg=NONE ctermbg=7
-hi CursorLine term=NONE cterm=NONE ctermfg=NONE ctermbg=7
-hi Cursor term=NONE cterm=NONE ctermfg=0 ctermbg=4
+hi CursorLine term=NONE cterm=NONE ctermfg=NONE ctermbg=254
+hi Cursor term=NONE cterm=NONE ctermfg=7 ctermbg=0
 hi Directory term=NONE cterm=NONE ctermfg=69 ctermbg=NONE
 hi ErrorMsg term=NONE cterm=NONE ctermfg=15 ctermbg=52
 hi Error term=NONE cterm=NONE ctermfg=15 ctermbg=52
@@ -115,3 +115,4 @@ hi SneakPluginTarget term=NONE cterm=NONE ctermfg=black ctermbg=yellow
 hi SneakStreakTarget term=NONE cterm=NONE ctermfg=black ctermbg=yellow
 hi SneakStreakStatusLine term=NONE cterm=NONE ctermfg=black ctermbg=yellow
 
+" lisp

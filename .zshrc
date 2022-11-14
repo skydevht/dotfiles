@@ -45,3 +45,4 @@ SAVEHIST=100000
 PROMPT='%B%(?..%F{red}%?%f )%F{blue}%~ %#%f%b '
 RPROMPT='%B%F{red}$(git rev-parse --abbrev-ref HEAD 2> /dev/null)%f%b'
 
+export PATH="$PATH:$HOME/go/bin"

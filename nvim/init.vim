@@ -12,6 +12,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-vinegar'
+Plug 'neovim/nvim-lspconfig'
 " Commands
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
@@ -52,6 +53,7 @@ set wildignore+=**/build/**
 set wildignore+=**/dist/**
 " Folding {{{2
 set foldmethod=syntax                                                       " Fold are defined by syntax highlighting
+set foldlevel=2
 " Indentation {{{2
 " Don't enable smarindent or cindent with filetype plugin indent on
 filetype plugin indent on                                                   " Indentation based on filetype
@@ -181,7 +183,7 @@ map <leader>d :Neoformat<cr>
 imap <leader><leader> <C-y>,
 
 " Plugin Configuration {{{1
-" Polyglot {{{ 2
+" Polyglot {{{2
 let g:tex_flavor = "latex"
 let g:vim_markdown_frontmatter=1
 " FZF {{{2
@@ -202,11 +204,15 @@ let g:vim_parinfer_filetypes = ['lisp', 'clojure']
 hi jsClassDefinition gui=bold
 hi jsFuncArgs gui=italic
 " Colorscheme {{{2
-if exists('$BASE16_THEME')
-      \ && (!exists('g:colors_name') || g:colors_name != 'base16-$BASE16_THEME')
-    let base16colorspace=256
-    colorscheme base16-$BASE16_THEME
-endif
+colorscheme hash
+
+" Augroup
+augroup filetype
+  autocmd!
+  autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4
+augroup END
+
+" Lua {{{1
+lua require('lsp-config')
 
 " vim:fdm=marker:fdl=1
-

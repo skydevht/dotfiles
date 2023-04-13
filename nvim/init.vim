@@ -12,13 +12,14 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-vinegar'
-Plug 'neovim/nvim-lspconfig'
+Plug 'vim-syntastic/syntastic'
 " Commands
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'sbdchd/neoformat'
 " Code Display
 Plug 'chriskempson/base16-vim'
+Plug 'NLKNguyen/papercolor-theme'
 
 call plug#end()
 
@@ -98,8 +99,8 @@ vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
 " Search {{{2
-map <space> /
-map <c-space> ?
+" map <space> /
+" map <c-space> ?
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 
@@ -183,6 +184,23 @@ map <leader>d :Neoformat<cr>
 imap <leader><leader> <C-y>,
 
 " Plugin Configuration {{{1
+" Syntastic {{{2
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_typescript_checkers = ["javascript/eslint", "tslint"]
+let g:syntastic_javascript_eslint_generic = 1
+let g:syntastic_javascript_eslint_exec = "/bin/ls"
+let g:syntastic_javascript_eslint_exe = "$(yarn bin)/eslint"
+let g:syntastic_javascript_eslint_args='-f compact'
+
+
 " Polyglot {{{2
 let g:tex_flavor = "latex"
 let g:vim_markdown_frontmatter=1
@@ -204,7 +222,8 @@ let g:vim_parinfer_filetypes = ['lisp', 'clojure']
 hi jsClassDefinition gui=bold
 hi jsFuncArgs gui=italic
 " Colorscheme {{{2
-colorscheme hash
+set background=light
+colorscheme PaperColor
 
 " Augroup
 augroup filetype
@@ -213,6 +232,6 @@ augroup filetype
 augroup END
 
 " Lua {{{1
-lua require('lsp-config')
+" lua require('lsp-config')
 
 " vim:fdm=marker:fdl=1

@@ -18,8 +18,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'sbdchd/neoformat'
 " Code Display
-Plug 'chriskempson/base16-vim'
-Plug 'NLKNguyen/papercolor-theme'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -222,8 +221,8 @@ let g:vim_parinfer_filetypes = ['lisp', 'clojure']
 hi jsClassDefinition gui=bold
 hi jsFuncArgs gui=italic
 " Colorscheme {{{2
-set background=light
-colorscheme PaperColor
+set background=dark
+colorscheme gruvbox
 
 " Augroup
 augroup filetype

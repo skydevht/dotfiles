@@ -1,77 +1,67 @@
-": Plugins {{{1
-call plug#begin()
-
-" Language 
-Plug 'sheerun/vim-polyglot'
-Plug 'mattn/emmet-vim'
-Plug 'tpope/vim-surround'
-Plug 'ledger/vim-ledger'
-" Integration
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-fugitive'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-vinegar'
-Plug 'vim-syntastic/syntastic'
-" Commands
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-commentary'
-Plug 'sbdchd/neoformat'
-" Code Display
-Plug 'morhetz/gruvbox'
-
-call plug#end()
-
 " Global Configuration Options {{{1
-set shell=/bin/bash
-lang en_US.UTF-8
-" Backup {{{2
-set nowritebackup
-set noswapfile
-" Visual Indicator {{{2
-set colorcolumn=81                                                          " Set the 80 character column (+1 if textwidth is defined else 81)
-set cursorline                                                              " Highlight the current line
-set number
-set hidden                                                                  " Any buffer can be hidden
-" Writing {{{2
-set lazyredraw                                                              " Render window only after the end of a macro
-set nojoinspaces                                                            " Prevents inserting two spaces after punctuation on a join (J)
-set showmatch                                                               " Show current brackets
-" Scrolling {{{2
-set scrolljump=5                                                            " Lines to scroll when cursor leaves screen
-set scrolloff=3                                                             " Minimum lines to keep above and below cursor
-" Window {{{2
-set splitbelow                                                              " Puts new split windows to the bottom of the current
-set splitright                                                              " Puts new vsplit windows to the right of the current
-set winminheight=0                                                          " Windows can be 0 line height
-set updatetime=100                                                          " Faster refresh  time
-" Fuzzy matching {{{2
+" Finding Files {{{2
+"
 set path+=**                                                                " fuzzy matching with :find *.ext*
 set wildignore+=**/node_modules/**                                          " Ignore some folders
 set wildignore+=**/.git/**
 set wildignore+=**/build/**
 set wildignore+=**/dist/**
+
+" Autocomplete {{{2
+set wildmode=longest,list,full                " complete longest common prefix before full
+
+" Backup {{{2
+set nowritebackup
+set noswapfile
+
+" Visual Indicator {{{2
+set colorcolumn=81                                                          " Set the 80 character column (+1 if textwidth is defined else 81)
+set cursorline                                                              " Highlight the current line
+set number
+set hidden                                                                  " Any buffer can be hidden
+
+" Writing {{{2
+set lazyredraw                                                              " Render window only after the end of a macro
+set nojoinspaces                                                            " Prevents inserting two spaces after punctuation on a join (J)
+set showmatch                                                               " Show current brackets
+
+" Scrolling {{{2
+set scrolljump=5                                                            " Lines to scroll when cursor leaves screen
+set scrolloff=3                                                             " Minimum lines to keep above and below cursor
+
+" Window {{{2
+set splitbelow                                                              " Puts new split windows to the bottom of the current
+set splitright                                                              " Puts new vsplit windows to the right of the current
+set winminheight=0                                                          " Windows can be 0 line height
+set updatetime=100                                                          " Faster refresh  time
+
 " Folding {{{2
-set foldmethod=syntax                                                       " Fold are defined by syntax highlighting
-set foldlevel=2
+"set foldmethod=syntax                                                       " Fold are defined by syntax highlighting
+"set foldlevel=2
+
 " Indentation {{{2
 " Don't enable smarindent or cindent with filetype plugin indent on
 filetype plugin indent on                                                   " Indentation based on filetype
+
 " Invisible characters {{{2
 set list
+
 " Mouse {{{2
 set mouse=a
+
 " Search {{{2
 set ignorecase                                                              " Case insensitive search
 set smartcase                                                               " Case sensitive only if search contains uppercase letter.
+j
 " Tabulation and spaces {{{2
 set expandtab                                                               " Show spaces instead of tabs
 set shiftwidth=0                                                            " columns per <<
 set softtabstop=2                                                          " spaces per tab
 set tabstop=2                                                               " columns per tabs
+
 " Wrapping {{{2
 set nowrap
-" Colors {{{2
+
 " StatusLine {{{2
 set statusline=%t                                       " tail of the filename
 set statusline+=\ %h                                    " help file flag
@@ -85,6 +75,7 @@ set statusline+=%c\                                     " cursor column
 set statusline+=%l/%L\                                  " cursor line/total lines
 
 " Mappings {{{1 
+
 " Leader {{{2
 let mapleader = ","
 let g:mapleader = ","
@@ -147,90 +138,10 @@ map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
 
-" Remove the Windows ^M - when the encodings gets messed up
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-
-" Toggle paste mode on and off
-map <leader>pp :setlocal paste!<cr>
-
-" Git {{{2
-nmap <leader>gs :Git<CR>
-nmap <leader>ga :Git add -A<CR>
-nmap <leader>gb :Gblame<CR>
-nmap <leader>gc :Gcommit<CR>
-nmap <leader>gd :Gdiff<CR>
-nmap <leader>gl :Glog<CR>
-nmap <leader>gp :Gpush<CR>
-nmap <leader>gpl :Gpull<CR>
-nmap <leader>gr :Gread<CR>
-nmap <leader>gw :Gwrite<CR>
-nmap <leader>ge :Gedit<CR>
-
-" Function keys {{{2
-noremap <F5> :source $MYVIMRC<CR>
-nnoremap <F10> :e $MYVIMRC<CR>
-nnoremap <F12> :syntax sync fromstart<cr>
-
-" FZF {{{2
-nmap <leader>fb :Buffers<cr>
-nmap <leader>ff :Files<cr>
-nnoremap <leader>fg :Rg<space>
-
-" Neoformat {{{2
-map <leader>d :Neoformat<cr>
-
-" Emmet {{{2
-imap <leader><leader> <C-y>,
-
-" Plugin Configuration {{{1
-" Syntastic {{{2
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_typescript_checkers = ["javascript/eslint", "tslint"]
-let g:syntastic_javascript_eslint_generic = 1
-let g:syntastic_javascript_eslint_exec = "/bin/ls"
-let g:syntastic_javascript_eslint_exe = "$(yarn bin)/eslint"
-let g:syntastic_javascript_eslint_args='-f compact'
-
-
-" Polyglot {{{2
-let g:tex_flavor = "latex"
-let g:vim_markdown_frontmatter=1
-" FZF {{{2
-let $FZF_DEFAULT_COMMAND = 'rg --files'
-" Neoformat {{{2
-let g:neoformat_try_formatprg = 1
-let g:neoformat_enabled_javascript = []
-" Emmet {{{2
-let g:user_emmet_settings = {
-            \ 'javascript.jsx' : {
-            \     'extends' : 'jsx',
-            \ },
-            \ }
-" Parinfer {{{2
-let g:vim_parinfer_filetypes = ['lisp', 'clojure']
-" Colors {{{1
-" Custom highlight {{{2
-hi jsClassDefinition gui=bold
-hi jsFuncArgs gui=italic
 " Colorscheme {{{2
-set background=dark
-colorscheme gruvbox
 
-" Augroup
-augroup filetype
-  autocmd!
-  autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4
-augroup END
+" Netrw {{{2
+let g:netrw_banner = 0
 
-" Lua {{{1
-" lua require('lsp-config')
 
 " vim:fdm=marker:fdl=1

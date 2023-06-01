@@ -1,3 +1,12 @@
+": Plugins {{{1
+call plug#begin()
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-commentary'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+call plug#end()
+
 " Global Configuration Options {{{1
 " Finding Files {{{2
 "
@@ -75,7 +84,6 @@ set statusline+=%c\                                     " cursor column
 set statusline+=%l/%L\                                  " cursor line/total lines
 
 " Mappings {{{1 
-
 " Leader {{{2
 let mapleader = ","
 let g:mapleader = ","
@@ -143,5 +151,13 @@ map <leader>s? z=
 " Netrw {{{2
 let g:netrw_banner = 0
 
+" Plugin Config {{{1
+" FZF {{{2
+nmap <leader>fb :Buffers<cr>
+nmap <leader>ff :Files<cr>
+nnoremap <leader>fg :Rg<space>
+let $FZF_DEFAULT_COMMAND = 'rg --files'
+
+" END {{{1
 
 " vim:fdm=marker:fdl=1

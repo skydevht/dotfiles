@@ -69,7 +69,7 @@
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; Keep folders clean (create new directory when not yet existing)
+n;; Keep folders clean (create new directory when not yet existing)
 (make-directory (expand-file-name "backups/" user-emacs-directory) t)
 (setq backup-directory-alist `(("." . ,
                 (expand-file-name "backups/" user-emacs-directory))))
@@ -105,7 +105,7 @@
      ("C-s" . swiper-isearch)
      ("M-y" . counsel-yank-pop)
      ("C-x C-f" . counsel-find-file)
-     ("C-x b" . ivy-switch-buffer)))
+     ("C-x b" ppp. ivy-switch-buffer)))
 
 (use-package projectile
   :pin melpa-stable
@@ -117,12 +117,14 @@
 
 (use-package counsel-projectile
   :pin melpa-stable)
-; git support (magit)
+
+;; git support (magit)
 (use-package magit
   :pin melpa-stable
   :bind (("C-x g" . magit-status)
      ("C-x M-g" . magit-dispatch)))
 
+;; Lisp Language support
 (use-package paredit
   :hook (lisp-mode-hook . enable-paredit-mode))
 
@@ -135,7 +137,7 @@
 ;; Customization
 (use-package doom-themes
   :config
-  (load-theme 'doom-solarized-light t)
+  (load-theme 'doom-gruvbox t)
 
   ;; Enable flashing mode-line on errors
   (doom-themes-visual-bell-config)
@@ -165,15 +167,20 @@
 
 (use-package vterm)
 
+(use-package evil
+  :ensure t
+  :config
+  (evil-mode 1))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("51c71bb27bdab69b505d9bf71c99864051b37ac3de531d91fdad1598ad247138" "680f62b751481cc5b5b44aeab824e5683cf13792c006aeba1c25ce2d89826426" default))
+   '("e3daa8f18440301f3e54f2093fe15f4fe951986a8628e98dcd781efbec7a46f2" "51c71bb27bdab69b505d9bf71c99864051b37ac3de531d91fdad1598ad247138" "680f62b751481cc5b5b44aeab824e5683cf13792c006aeba1c25ce2d89826426" default))
  '(package-selected-packages
-   '(vterm flycheck company which-key crux expand-region counsel-projectile ace-jump-mode evil paredit counsel all-the-icons doom-themes doom-modeline org-mode cider projectile magit json-mode use-package no-littering auto-package-update))
+   '(evil-mode vterm flycheck company which-key crux expand-region counsel-projectile ace-jump-mode evil paredit counsel all-the-icons doom-themes doom-modeline org-mode cider projectile magit json-mode use-package no-littering auto-package-update))
  '(tab-bar-close-button-show 'selected)
  '(tab-bar-format
    '(tab-bar-format-history tab-bar-format-tabs tab-bar-separator))

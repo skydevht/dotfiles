@@ -1,4 +1,4 @@
-lspconfig = require "lspconfig"
+local lspconfig = require "lspconfig"
 util = require "lspconfig/util"
 
 local on_attach = function(client, bufnr)
@@ -40,6 +40,6 @@ lspconfig.gopls.setup{
   },
 }
 
-require('lspconfig')['tsserver'].setup{
+lspconfig.tsserver.setup{
   on_attach = on_attach,
 }

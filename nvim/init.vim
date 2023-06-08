@@ -5,6 +5,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'neovim/nvim-lspconfig'
 call plug#end()
 
 " Global Configuration Options {{{1
@@ -152,6 +153,10 @@ map <leader>s? z=
 let g:netrw_banner = 0
 
 " Plugin Config {{{1
+
+" LSP Config {{{2
+lua require("lsp-config")
+
 " FZF {{{2
 nmap <leader>fb :Buffers<cr>
 nmap <leader>ff :Files<cr>

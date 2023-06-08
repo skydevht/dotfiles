@@ -5,6 +5,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'Luxed/ayu-vim'
 Plug 'neovim/nvim-lspconfig'
 call plug#end()
 
@@ -147,7 +148,6 @@ map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
 
-" Colorscheme {{{2
 
 " Netrw {{{2
 let g:netrw_banner = 0
@@ -162,6 +162,12 @@ nmap <leader>fb :Buffers<cr>
 nmap <leader>ff :Files<cr>
 nnoremap <leader>fg :Rg<space>
 let $FZF_DEFAULT_COMMAND = 'rg --files'
+
+" Colorscheme {{{1
+set termguicolors
+set background=dark
+let ayucolor="mirage"
+colorscheme ayu
 
 " END {{{1
 

@@ -7,6 +7,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'Luxed/ayu-vim'
 Plug 'neovim/nvim-lspconfig'
+Plug 'ledger/vim-ledger'
 call plug#end()
 
 " Global Configuration Options {{{1

@@ -99,6 +99,10 @@
      ("C-x C-f" . counsel-find-file)
      ("C-x b" . ivy-switch-buffer)))
 
+(use-package yaml-mode)
+
+(use-package markdown-mode)
+
 (use-package projectile
   :pin melpa-stable
   :config
@@ -171,7 +175,7 @@
  '(custom-safe-themes
    '("e3daa8f18440301f3e54f2093fe15f4fe951986a8628e98dcd781efbec7a46f2" "51c71bb27bdab69b505d9bf71c99864051b37ac3de531d91fdad1598ad247138" "680f62b751481cc5b5b44aeab824e5683cf13792c006aeba1c25ce2d89826426" default))
  '(package-selected-packages
-   '(evil-mode vterm flycheck company which-key crux expand-region counsel-projectile ace-jump-mode evil paredit counsel all-the-icons doom-themes doom-modeline org-mode cider projectile magit json-mode use-package no-littering auto-package-update))
+   '(markdown-mode yaml-mode ledger-mode evil-mode vterm flycheck company which-key crux expand-region counsel-projectile ace-jump-mode evil paredit counsel all-the-icons doom-themes doom-modeline org-mode cider projectile magit json-mode use-package no-littering auto-package-update))
  '(tab-bar-close-button-show 'selected)
  '(tab-bar-format
    '(tab-bar-format-history tab-bar-format-tabs tab-bar-separator))

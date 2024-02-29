@@ -18,6 +18,7 @@ Plug 'tpope/vim-commentary'
 Plug 'sbdchd/neoformat'
 " Code Display
 Plug 'chriskempson/base16-vim'
+Plug 'jsit/toast.vim'
 
 call plug#end()
 

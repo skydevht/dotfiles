@@ -5,9 +5,9 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'Luxed/ayu-vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'ledger/vim-ledger'
+Plug 'jsit/toast.vim'
 call plug#end()
 
 " Global Configuration Options {{{1
@@ -165,10 +165,8 @@ nnoremap <leader>fg :Rg<space>
 let $FZF_DEFAULT_COMMAND = 'rg --files'
 
 " Colorscheme {{{1
-set termguicolors
-set background=dark
-let ayucolor="mirage"
-colorscheme ayu
+set background=light
+colorscheme toast
 
 " END {{{1
 

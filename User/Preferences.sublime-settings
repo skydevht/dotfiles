@@ -2,7 +2,7 @@
 // and are overridden in turn by syntax-specific settings.
 {
 	"font_size": 15,
-	"font_face": "Input",
+	"font_face": "DM Mono",
 	"translate_tabs_to_spaces": true,
 	"wrod_wrap": true,
 	"wrap_width": 72,
@@ -10,18 +10,15 @@
 	"scroll_context_lines": 3,
 	"ignored_packages":
 	[
-		"0x0",
-		"Pug",
-		"Rust Enhanced",
-		"Six",
 		"Vintage",
-		"Vintageous",
 	],
 	"color_scheme": "auto",
-	"theme": "auto",
-	"neovintageous_build_version": 12700,
+	"theme": "Adaptive.sublime-theme",
+	"neovintageous_build_version": 13200,
 	"dark_theme": "ayu-mirage.sublime-theme",
 	"light_theme": "ayu-light.sublime-theme",
 	"dark_color_scheme": "ayu-mirage.sublime-color-scheme",
 	"light_color_scheme": "ayu-light.sublime-color-scheme",
+	"vintageous_use_super_keys": false,
+	"index_files": true,
 }

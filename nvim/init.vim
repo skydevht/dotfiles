@@ -28,7 +28,7 @@ set noswapfile
 
 " Visual Indicator {{{2
 set colorcolumn=81                                                          " Set the 80 character column (+1 if textwidth is defined else 81)
-set cursorline                                                              " Highlight the current line
+"set cursorline                                                              " Highlight the current line
 set number
 set hidden                                                                  " Any buffer can be hidden
 

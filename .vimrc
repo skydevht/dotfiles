@@ -47,6 +47,7 @@ filetype plugin indent on                                                   " In
 
 " Invisible characters {{{2
 set list
+set listchars=tab:>-,trail:-
 
 " Mouse {{{2
 set mouse=a
@@ -152,7 +153,7 @@ nnoremap <leader>fg :Rg<space>
 let $FZF_DEFAULT_COMMAND = 'rg --files'
 
 " Colorscheme {{{1
-set background=light
+set background=dark
 colorscheme toast
 
 " END {{{1

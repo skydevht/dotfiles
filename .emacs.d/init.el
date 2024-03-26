@@ -128,7 +128,7 @@
 (use-package paredit
   :hook (lisp-mode-hook . enable-paredit-mode))
 
-;; slime setup
+;; sly setup
 (use-package sly)
 
 ;; cider setup
@@ -170,7 +170,7 @@
   :init
   (setq evil-want-keybinding nil)
   :config
-  (evil-mode 1))
+  (evil-mode 0))
 
 (use-package evil-collection
   :after evil
@@ -201,7 +201,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("02f57ef0a20b7f61adce51445b68b2a7e832648ce2e7efb19d217b6454c1b644" "afa47084cb0beb684281f480aa84dab7c9170b084423c7f87ba755b15f6776ef" "e3daa8f18440301f3e54f2093fe15f4fe951986a8628e98dcd781efbec7a46f2" "51c71bb27bdab69b505d9bf71c99864051b37ac3de531d91fdad1598ad247138" "680f62b751481cc5b5b44aeab824e5683cf13792c006aeba1c25ce2d89826426" default))
+   '("34cf3305b35e3a8132a0b1bdf2c67623bc2cb05b125f8d7d26bd51fd16d547ec" "02f57ef0a20b7f61adce51445b68b2a7e832648ce2e7efb19d217b6454c1b644" "afa47084cb0beb684281f480aa84dab7c9170b084423c7f87ba755b15f6776ef" "e3daa8f18440301f3e54f2093fe15f4fe951986a8628e98dcd781efbec7a46f2" "51c71bb27bdab69b505d9bf71c99864051b37ac3de531d91fdad1598ad247138" "680f62b751481cc5b5b44aeab824e5683cf13792c006aeba1c25ce2d89826426" default))
  '(package-selected-packages
    '(evil-collection sweeprolog web-mode general lsp-ui lsp-mode typescript-mode markdown-mode yaml-mode ledger-mode evil-mode flycheck company which-key crux expand-region counsel-projectile ace-jump-mode evil paredit counsel all-the-icons doom-themes doom-modeline org-mode cider projectile magit json-mode use-package no-littering auto-package-update))
  '(tab-bar-close-button-show 'selected)
@@ -213,4 +213,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:height 145 :family "Input")))))
+ '(default ((t (:height 145 :family "DM Mono")))))
